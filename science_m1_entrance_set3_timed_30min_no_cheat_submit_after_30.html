@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>วิทยาศาสตร์ พิชิตสอบเข้า ม.1 — ชุดที่ 3</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700;800;900&display=swap');
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:'Sarabun',sans-serif;color:#f8fbff;min-height:100vh;overflow-x:hidden;
+  background:
+    radial-gradient(circle at 12% 12%,#22d3ee55,transparent 26%),
+    radial-gradient(circle at 88% 18%,#facc1550,transparent 28%),
+    radial-gradient(circle at 50% 100%,#a855f744,transparent 35%),
+    linear-gradient(135deg,#020617,#0f172a 52%,#111827);
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.32;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:32px 32px;animation:star 20s linear infinite}
+@keyframes star{to{transform:translateY(32px)}}
+.wrap{width:min(1020px,94vw);margin:auto;padding:24px 0 42px;position:relative;z-index:1}
+.card{background:linear-gradient(180deg,#ffffff1c,#ffffff0a);border:1px solid #ffffff2d;border-radius:30px;padding:28px;box-shadow:0 26px 80px #0009,inset 0 1px 0 #fff2;backdrop-filter:blur(12px)}
+.logo{display:inline-flex;gap:10px;align-items:center;padding:8px 16px;border-radius:999px;background:#38bdf833;border:1px solid #7dd3fc66;font-weight:900;color:#e0fbff}
+h1{font-size:clamp(31px,5vw,58px);margin:18px 0 10px;line-height:1.12;text-shadow:0 0 28px #38bdf8aa}
+.subtitle{font-size:clamp(18px,2.2vw,24px);color:#dbeafe;line-height:1.55}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:20px 0}
+.rule{background:#020617aa;border:1px solid #67e8f966;border-radius:18px;padding:14px;font-weight:800;text-align:center}
+input{width:100%;padding:18px 20px;border-radius:18px;border:2px solid #67e8f9;background:#020617cc;color:#fff;font-size:22px;outline:none;margin:14px 0}
+button{border:0;border-radius:18px;padding:15px 22px;font-family:inherit;font-size:19px;font-weight:900;cursor:pointer;color:#06121f;background:linear-gradient(135deg,#fde047,#38bdf8);box-shadow:0 10px 0 #075985,0 18px 34px #0007;transition:.12s transform,.12s box-shadow}
+button:hover{transform:translateY(-2px)}button:active{transform:translateY(6px);box-shadow:0 4px 0 #075985,0 8px 16px #0006}button:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(.4);transform:none!important;box-shadow:none!important}
+.secondary{background:linear-gradient(135deg,#e0e7ff,#c084fc);box-shadow:0 10px 0 #6d28d9,0 18px 34px #0007}
+.hidden{display:none!important}
+.topbar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:16px;flex-wrap:wrap}
+.pill{padding:10px 15px;border-radius:999px;background:#020617bb;border:1px solid #60a5fa66;font-weight:900}
+.timer{font-size:clamp(20px,3vw,30px);color:#fde047;text-shadow:0 0 18px #facc15aa}
+.timer.danger{color:#fb7185;animation:pulse .7s infinite}
+@keyframes pulse{50%{transform:scale(1.04)}}
+.progress{height:14px;background:#020617;border-radius:99px;overflow:hidden;border:1px solid #38bdf855;margin:14px 0}
+.bar{height:100%;width:0%;background:linear-gradient(90deg,#22c55e,#fde047,#38bdf8);transition:.25s}
+.qbox{font-size:clamp(22px,3vw,32px);font-weight:900;line-height:1.45;margin:16px 0 18px}
+.options{display:grid;gap:14px}
+.opt{width:100%;text-align:left;color:#f8fbff;background:linear-gradient(90deg,#0f172acc,#1e293bcc);border:2px solid #60a5fa55;box-shadow:none;border-radius:20px;padding:17px 18px;font-size:clamp(18px,2.2vw,23px);font-weight:800}
+.opt:hover{border-color:#fde047;background:#172554}.opt.selected{background:linear-gradient(90deg,#facc15,#38bdf8);color:#06121f;border-color:#fff}
+.nav{display:flex;justify-content:space-between;gap:12px;margin-top:22px;flex-wrap:wrap}
+.resultScore{font-size:clamp(42px,8vw,88px);font-weight:900;color:#fde047;text-shadow:0 0 30px #facc15aa;text-align:center}
+.pass{text-align:center;font-size:clamp(24px,4vw,42px);font-weight:900;margin:8px 0 20px}
+.review{display:grid;gap:14px;margin-top:20px}
+.reviewItem{background:#020617aa;border:1px solid #ffffff22;border-radius:18px;padding:16px;line-height:1.55}
+.correct{color:#86efac;font-weight:900}.wrong{color:#fca5a5;font-weight:900}.exp{color:#bfdbfe;margin-top:8px}
+.footerBtns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:22px}
+@media print{body{background:#fff;color:#000}body:before,.noPrint{display:none!important}.wrap{width:100%;padding:0}.card,.reviewItem{box-shadow:none;border:1px solid #999;background:#fff;color:#000}.exp{color:#000}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section id="start" class="card">
+<div class="logo">⚡ Kru Pai Classroom • Science Entrance</div>
+<h1>วิทยาศาสตร์ พิชิตสอบเข้า ม.1 — ชุดที่ 3</h1>
+<p class="subtitle">ข้อสอบวิทยาศาสตร์ระดับปานกลาง–ยาก จำนวน 30 ข้อ<br>โหมดจับเวลา 30 นาที ผ่านเกณฑ์ 80% ต้องได้อย่างน้อย 24/30 🚀<br><b>โหมดกันโกง:</b> ระหว่างทำข้อสอบจะไม่บอกถูก/ผิด และจะตรวจคะแนนตอนส่งท้ายเกมเท่านั้น</p>
+<div class="rules">
+<div class="rule">⏱ เวลา 30 นาที</div><div class="rule">🎯 ผ่าน 80%</div><div class="rule">✅ 24 ข้อขึ้นไป</div><div class="rule">🔊 มีเสียงกด</div>
+</div>
+<input id="studentName" placeholder="พิมพ์ชื่อนักเรียน..." />
+<button onclick="startGame()">เริ่มสอบจับเวลา</button>
+</section>
+
+<section id="quiz" class="card hidden">
+<div class="topbar">
+<div class="pill" id="nameShow">ผู้เล่น: -</div>
+<div class="pill" id="countShow">ข้อ 1/30</div>
+<div class="pill" id="scoreShow">ตอบแล้ว: 0/30</div>
+<div class="pill timer" id="timerShow">30:00</div>
+</div>
+<div class="progress"><div class="bar" id="bar"></div></div>
+<div class="qbox" id="question"></div>
+<div class="options" id="options"></div>
+<div class="nav noPrint">
+<button class="secondary" onclick="prevQ()">ย้อนกลับ</button>
+<button onclick="nextQ()">ข้อถัดไป</button>
+<button id="submitBtn" class="secondary" onclick="showResult()" disabled>ส่งข้อสอบ / ตรวจคะแนน</button>
+</div>
+<div class="subtitle noPrint" style="font-size:16px;margin-top:14px;color:#fef3c7">🔒 ปุ่มส่งข้อสอบจะกดได้เมื่อทำครบ 30 ข้อเท่านั้น — ระบบจะไม่เฉลยระหว่างทำข้อสอบ</div>
+</section>
+
+<section id="result" class="card hidden">
+<div class="logo">📘 Kru Pai Classroom • Timed Result</div>
+<h1>สรุปผลสอบ ชุดที่ 3</h1>
+<div class="subtitle" id="resultName"></div>
+<div class="subtitle" id="timeUsed"></div>
+<div class="resultScore" id="finalScore"></div>
+<div class="pass" id="passText"></div>
+<div class="footerBtns noPrint">
+<button onclick="window.print()">พิมพ์ / บันทึกเป็น PDF หรือ Word</button>
+<button class="secondary" onclick="restart()">กลับหน้าแรก</button>
+</div>
+<div class="review" id="review"></div>
+</section>
+</div>
+
+<script>
+const questions = [{"q": "ข้อใดเป็นการทดลองที่ควบคุมตัวแปรได้เหมาะสมที่สุดเมื่อต้องการศึกษาว่าแสงมีผลต่อการเจริญเติบโตของพืชหรือไม่", "opts": ["ปลูกพืชชนิดเดียวกัน ดินเท่ากัน น้ำเท่ากัน แต่ให้แสงต่างกัน", "ปลูกพืชต่างชนิดกันและให้น้ำต่างกัน", "ปลูกพืชชนิดเดียวกันแต่ใช้กระถางขนาดต่างกันทุกต้น", "ปลูกพืชในที่มืดทั้งหมดแล้วเปรียบเทียบกัน"], "ans": 0, "exp": "ต้องเปลี่ยนเฉพาะตัวแปรต้นคือปริมาณแสง ส่วนตัวแปรอื่นควรควบคุมให้เหมือนกัน"}, {"q": "ถ้านักเรียนต้องการแยกเกลือออกจากน้ำเกลือ ควรใช้วิธีใดเหมาะสมที่สุด", "opts": ["การระเหยแห้ง", "การกรอง", "การใช้แม่เหล็ก", "การร่อน"], "ans": 0, "exp": "เกลือละลายในน้ำ จึงกรองไม่ได้ ต้องระเหยน้ำออกจึงเหลือเกลือ"}, {"q": "สารละลายชนิดหนึ่งมีรสเปรี้ยวและเปลี่ยนกระดาษลิตมัสสีน้ำเงินเป็นสีแดง สารนี้มีสมบัติเป็นอะไร", "opts": ["กรด", "เบส", "กลาง", "โลหะ"], "ans": 0, "exp": "กรดมีรสเปรี้ยวและเปลี่ยนลิตมัสสีน้ำเงินเป็นสีแดง"}, {"q": "ข้อใดแสดงว่าเกิดสารใหม่ขึ้น", "opts": ["เหล็กเกิดสนิม", "น้ำแข็งละลาย", "น้ำตาลละลายในน้ำ", "แก้วแตกเป็นชิ้นเล็ก"], "ans": 0, "exp": "สนิมเป็นสารใหม่ที่เกิดจากปฏิกิริยาเคมีของเหล็กกับออกซิเจนและน้ำ"}, {"q": "ถ้าต้องการทดสอบน้ำตาลรีดิวซ์ในอาหาร ควรใช้สารใด", "opts": ["สารละลายเบเนดิกต์", "สารละลายไอโอดีน", "น้ำปูนใส", "น้ำเกลือ"], "ans": 0, "exp": "เบเนดิกต์ใช้ทดสอบน้ำตาลรีดิวซ์ เมื่อให้ความร้อนอาจเกิดสีส้มแดง"}, {"q": "ในระบบย่อยอาหาร อวัยวะใดมีสภาพเป็นกรดมากที่สุด", "opts": ["กระเพาะอาหาร", "ปาก", "ลำไส้เล็ก", "ลำไส้ใหญ่"], "ans": 0, "exp": "กระเพาะอาหารมีกรดไฮโดรคลอริกช่วยฆ่าเชื้อและช่วยการย่อยโปรตีน"}, {"q": "อาหารประเภทโปรตีนเริ่มถูกย่อยอย่างเด่นชัดที่อวัยวะใด", "opts": ["กระเพาะอาหาร", "ปาก", "ลำไส้ใหญ่", "หลอดอาหาร"], "ans": 0, "exp": "โปรตีนเริ่มถูกย่อยในกระเพาะอาหารโดยเอนไซม์เพปซิน"}, {"q": "หน้าที่สำคัญของลำไส้ใหญ่คือข้อใด", "opts": ["ดูดซึมน้ำและเกลือแร่บางส่วน", "ย่อยแป้งเป็นน้ำตาล", "สร้างน้ำดี", "แลกเปลี่ยนแก๊ส"], "ans": 0, "exp": "ลำไส้ใหญ่ดูดซึมน้ำกลับ ทำให้อุจจาระมีลักษณะเป็นก้อน"}, {"q": "เลือดจากร่างกายที่มีออกซิเจนต่ำจะไหลเข้าสู่หัวใจห้องใดก่อน", "opts": ["ห้องบนขวา", "ห้องบนซ้าย", "ห้องล่างขวา", "ห้องล่างซ้าย"], "ans": 0, "exp": "เลือดดำจากร่างกายไหลกลับเข้าสู่หัวใจทางห้องบนขวา"}, {"q": "ถ้าเกล็ดเลือดทำงานผิดปกติ จะเกิดผลใดมากที่สุด", "opts": ["เลือดหยุดไหลช้าหรือแข็งตัวยาก", "ลำเลียงออกซิเจนไม่ได้", "หัวใจหยุดเต้นทันทีเสมอ", "กระดูกสร้างเลือดไม่ได้"], "ans": 0, "exp": "เกล็ดเลือดช่วยในการแข็งตัวของเลือดเมื่อเกิดบาดแผล"}, {"q": "การสังเคราะห์ด้วยแสงต้องใช้สิ่งใดเป็นวัตถุดิบหลัก", "opts": ["น้ำและคาร์บอนไดออกไซด์", "ออกซิเจนและน้ำตาล", "โปรตีนและไขมัน", "ไนโตรเจนและออกซิเจน"], "ans": 0, "exp": "พืชใช้น้ำและคาร์บอนไดออกไซด์ในการสร้างน้ำตาล โดยมีแสงและคลอโรฟิลล์ช่วย"}, {"q": "ถ้าพืชได้รับน้ำเพียงพอแต่ขาดคาร์บอนไดออกไซด์ จะกระทบกระบวนการใดโดยตรง", "opts": ["การสังเคราะห์ด้วยแสง", "การงอกของเมล็ดเท่านั้น", "การดูดน้ำของรากเท่านั้น", "การเกิดดอกทันที"], "ans": 0, "exp": "คาร์บอนไดออกไซด์เป็นวัตถุดิบสำคัญในการสังเคราะห์ด้วยแสง"}, {"q": "ข้อใดเป็นการปรับตัวของพืชทะเลทรายเพื่อลดการสูญเสียน้ำ", "opts": ["ใบเปลี่ยนเป็นหนาม", "ใบกว้างมากและบาง", "รากสั้นมากทั้งหมด", "ปากใบเปิดตลอดเวลา"], "ans": 0, "exp": "ใบที่เปลี่ยนเป็นหนามช่วยลดพื้นที่ผิวและลดการคายน้ำ"}, {"q": "ในห่วงโซ่อาหาร พลังงานจะลดลงเมื่อถ่ายทอดไปยังลำดับถัดไป เพราะเหตุใด", "opts": ["สิ่งมีชีวิตใช้พลังงานบางส่วนในการดำรงชีวิต", "พลังงานถูกสร้างเพิ่มทุกขั้น", "ผู้ล่าไม่ต้องใช้พลังงาน", "พืชไม่เกี่ยวข้องกับพลังงาน"], "ans": 0, "exp": "พลังงานส่วนหนึ่งถูกใช้ในกิจกรรมต่าง ๆ และสูญเสียเป็นความร้อน"}, {"q": "ความสัมพันธ์ระหว่างผึ้งกับดอกไม้จัดเป็นแบบใด", "opts": ["ได้ประโยชน์ร่วมกัน", "ผู้ล่ากับเหยื่อ", "ปรสิต", "แข่งขันกัน"], "ans": 0, "exp": "ผึ้งได้อาหารจากน้ำหวาน ส่วนดอกไม้ได้รับการช่วยผสมเกสร"}, {"q": "ถ้าแรง 10 นิวตัน และ 6 นิวตัน กระทำต่อวัตถุในทิศตรงข้ามกัน แรงลัพธ์มีค่าเท่าใด", "opts": ["4 นิวตัน ไปทางแรง 10 นิวตัน", "16 นิวตัน ไปทางแรง 6 นิวตัน", "60 นิวตัน", "0 นิวตัน"], "ans": 0, "exp": "แรงทิศตรงข้ามนำมาลบกัน 10 - 6 = 4 นิวตัน ทิศไปทางแรงที่มากกว่า"}, {"q": "เครื่องผ่อนแรงชนิดใดเปลี่ยนทิศทางของแรงได้เด่นชัด", "opts": ["รอกเดี่ยวตายตัว", "พื้นเอียง", "ลิ่ม", "สกรู"], "ans": 0, "exp": "รอกเดี่ยวตายตัวช่วยเปลี่ยนทิศทางแรงดึง ทำให้ดึงลงแต่วัตถุยกขึ้น"}, {"q": "วัตถุที่มีมวล 2 กิโลกรัม บนโลกจะมีน้ำหนักประมาณเท่าใด หากใช้ g ≈ 10 N/kg", "opts": ["20 นิวตัน", "2 นิวตัน", "10 นิวตัน", "200 นิวตัน"], "ans": 0, "exp": "น้ำหนัก = มวล × ความเร่งโน้มถ่วง = 2 × 10 = 20 นิวตัน"}, {"q": "ข้อใดเป็นการเปลี่ยนพลังงานจากพลังงานเคมีเป็นพลังงานไฟฟ้า", "opts": ["ถ่านไฟฉายในวงจร", "พัดลมกำลังหมุน", "หลอดไฟสว่าง", "ลำโพงเกิดเสียง"], "ans": 0, "exp": "ถ่านไฟฉายเปลี่ยนพลังงานเคมีเป็นพลังงานไฟฟ้า"}, {"q": "ในวงจรไฟฟ้า ถ้าสวิตช์เปิดอยู่ กระแสไฟฟ้าจะเป็นอย่างไร", "opts": ["ไม่ไหลครบวงจร", "ไหลมากขึ้นทันที", "ไหลย้อนกลับเสมอ", "ทำให้ถ่านหมดเร็วขึ้นเสมอ"], "ans": 0, "exp": "สวิตช์เปิดทำให้วงจรขาด กระแสไฟฟ้าจึงไม่ไหลครบวงจร"}, {"q": "วัตถุโปร่งใสมีลักษณะอย่างไร", "opts": ["แสงผ่านได้และมองเห็นวัตถุด้านหลังชัด", "แสงผ่านไม่ได้เลย", "แสงผ่านได้แต่เห็นไม่ชัด", "สะท้อนแสงทั้งหมด"], "ans": 0, "exp": "วัตถุโปร่งใสให้แสงผ่านได้ดี เช่น กระจกใส น้ำใส"}, {"q": "การหักเหของแสงเกิดขึ้นเมื่อใด", "opts": ["แสงเดินทางผ่านตัวกลางต่างชนิดแล้วเปลี่ยนทิศ", "แสงชนกระจกแล้วสะท้อนกลับ", "แสงถูกวัตถุทึบแสงกั้น", "แสงกลายเป็นเสียง"], "ans": 0, "exp": "แสงหักเหเมื่อผ่านตัวกลางต่างชนิด เช่น จากอากาศสู่น้ำ"}, {"q": "เสียงไม่สามารถเดินทางผ่านสิ่งใด", "opts": ["สุญญากาศ", "น้ำ", "เหล็ก", "อากาศ"], "ans": 0, "exp": "เสียงต้องอาศัยตัวกลางในการเดินทาง จึงเดินทางผ่านสุญญากาศไม่ได้"}, {"q": "การเกิดสุริยุปราคาเกิดจากอะไร", "opts": ["ดวงจันทร์อยู่ระหว่างโลกกับดวงอาทิตย์", "โลกอยู่ระหว่างดวงอาทิตย์กับดวงจันทร์", "ดาวอังคารบังโลก", "ดวงอาทิตย์โคจรรอบโลก"], "ans": 0, "exp": "สุริยุปราคาเกิดเมื่อดวงจันทร์บังแสงจากดวงอาทิตย์ไม่ให้มาถึงบางบริเวณของโลก"}, {"q": "ดาวเคราะห์ดวงใดได้ชื่อว่าเป็นดาวเคราะห์สีแดง", "opts": ["อังคาร", "พุธ", "ศุกร์", "เนปจูน"], "ans": 0, "exp": "ดาวอังคารมีพื้นผิวที่มีสารประกอบเหล็กออกไซด์ จึงเห็นเป็นสีแดง"}, {"q": "หินแปรเกิดจากกระบวนการใด", "opts": ["หินเดิมได้รับความร้อนและความดันสูง", "ลาวาเย็นตัวทันที", "ตะกอนตกทับถมในทะเลเท่านั้น", "น้ำระเหยกลายเป็นผลึกเกลือ"], "ans": 0, "exp": "หินแปรเกิดจากหินเดิมเปลี่ยนแปลงเพราะความร้อนและความดัน"}, {"q": "ข้อใดเป็นสาเหตุสำคัญของการพังทลายของดิน", "opts": ["การตัดไม้ทำลายป่า", "การปลูกพืชคลุมดิน", "การทำขั้นบันไดบนพื้นที่ลาดชัน", "การปลูกหญ้าแฝก"], "ans": 0, "exp": "การตัดไม้ทำลายป่าทำให้ดินขาดรากพืชยึดเกาะ จึงถูกชะล้างง่าย"}, {"q": "น้ำเสียที่มีสารอินทรีย์มากเกินไปมักทำให้สัตว์น้ำตายเพราะเหตุใด", "opts": ["จุลินทรีย์ใช้ออกซิเจนย่อยสลายมากจนออกซิเจนในน้ำลดลง", "น้ำมีออกซิเจนเพิ่มขึ้นมาก", "ปลามีอาหารมากเกินไปจึงไม่หายใจ", "น้ำกลายเป็นน้ำกลั่นทันที"], "ans": 0, "exp": "สารอินทรีย์มากทำให้จุลินทรีย์ใช้ออกซิเจนสูง ส่งผลให้ออกซิเจนละลายน้ำลดลง"}, {"q": "ข้อใดเป็นการอนุรักษ์พลังงานที่เหมาะสมที่สุดในชีวิตประจำวัน", "opts": ["ปิดไฟและถอดปลั๊กเมื่อไม่ใช้งาน", "เปิดเครื่องปรับอากาศทิ้งไว้ทั้งวัน", "ใช้รถยนต์ส่วนตัวทุกระยะทาง", "เปิดตู้เย็นค้างไว้นาน ๆ"], "ans": 0, "exp": "การปิดไฟและถอดปลั๊กช่วยลดการใช้พลังงานไฟฟ้า"}, {"q": "ถ้านักเรียนพบว่าผลการทดลองไม่ตรงกับสมมติฐาน ควรทำอย่างไร", "opts": ["บันทึกผลตามจริงและวิเคราะห์สาเหตุ", "แก้ผลให้ตรงกับสมมติฐาน", "ทิ้งผลการทดลองทั้งหมดทันที", "สรุปว่าสมมติฐานถูกเสมอ"], "ans": 0, "exp": "การทดลองทางวิทยาศาสตร์ต้องบันทึกผลตามจริง แม้ไม่ตรงกับสมมติฐาน"}];
+let current=0, answers=Array(questions.length).fill(null), student="", timeLeft=30*60, timerId=null, startedAt=0, endedByTime=false;
+let audioCtx;
+function beep(type='click'){
+try{
+audioCtx=audioCtx||new(window.AudioContext||window.webkitAudioContext)();
+const now=audioCtx.currentTime,o=audioCtx.createOscillator(),g=audioCtx.createGain();o.connect(g);g.connect(audioCtx.destination);
+let freq=520,dur=.06;if(type==='next'){freq=720;dur=.08}if(type==='correct'){freq=900;dur=.1}if(type==='finish'){freq=660;dur=.12}if(type==='warn'){freq=180;dur=.18}
+o.frequency.setValueAtTime(freq,now);o.frequency.exponentialRampToValueAtTime(freq*1.55,now+dur);
+g.gain.setValueAtTime(.0001,now);g.gain.exponentialRampToValueAtTime(.20,now+.01);g.gain.exponentialRampToValueAtTime(.0001,now+dur);
+o.start(now);o.stop(now+dur+.02);
+if(type==='finish'){setTimeout(()=>beep('correct'),130);setTimeout(()=>beep('next'),260)}
+}catch(e){}
+}
+function fmt(sec){const m=Math.floor(sec/60),s=sec%60;return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')}
+function updateSubmitButton(){
+  const btn=document.getElementById('submitBtn');
+  if(!btn) return;
+  const done=answers.filter(a=>a!==null).length;
+  btn.disabled = done < questions.length;
+  btn.textContent = done < questions.length ? `ส่งข้อสอบได้เมื่อครบ ${done}/${questions.length}` : 'ส่งข้อสอบ / ตรวจคะแนน';
+}
+function startGame(){
+student=document.getElementById('studentName').value.trim()||'นักเรียน';
+document.getElementById('start').classList.add('hidden');document.getElementById('quiz').classList.remove('hidden');
+document.getElementById('nameShow').textContent='ผู้เล่น: '+student;startedAt=Date.now();endedByTime=false;timeLeft=30*60;
+beep('finish');render();startTimer();
+}
+function startTimer(){
+clearInterval(timerId);
+timerId=setInterval(()=>{timeLeft--;updateTimer();if(timeLeft<=0){endedByTime=true;showResult(true);}},1000);
+}
+function updateTimer(){
+const t=document.getElementById('timerShow');t.textContent=fmt(Math.max(0,timeLeft));
+if(timeLeft<=300)t.classList.add('danger'); else t.classList.remove('danger');
+if(timeLeft>0 && timeLeft<=10)beep('warn');
+}
+function render(){
+const q=questions[current];document.getElementById('countShow').textContent=`ข้อ ${current+1}/${questions.length}`;
+document.getElementById('question').textContent=(current+1)+'. '+q.q;
+document.getElementById('bar').style.width=(answers.filter(a=>a!==null).length/questions.length*100)+'%';
+document.getElementById('scoreShow').textContent='ตอบแล้ว: '+answers.filter(a=>a!==null).length+'/'+questions.length;updateSubmitButton();
+const box=document.getElementById('options');box.innerHTML='';
+q.opts.forEach((op,i)=>{const btn=document.createElement('button');btn.className='opt'+(answers[current]===i?' selected':'');btn.textContent=(i+1)+') '+op;btn.onclick=()=>{answers[current]=i;beep('click');render();};box.appendChild(btn);});
+}
+function calcScore(){return answers.reduce((s,a,i)=>s+(a===questions[i].ans?1:0),0)}
+function nextQ(){
+  beep('next');
+  if(current<questions.length-1){current++;render();}
+  else{
+    if(answers.filter(a=>a!==null).length===questions.length){showResult();}
+    else{alert('ยังทำไม่ครบ 30 ข้อจ้า ต้องตอบให้ครบก่อนส่งข้อสอบ');}
+  }
+}
+function prevQ(){beep('click');if(current>0){current--;render();}}
+function showResult(force=false){
+if(!force && answers.filter(a=>a!==null).length < questions.length){
+  alert('ยังทำไม่ครบ 30 ข้อจ้า ต้องตอบให้ครบก่อนส่งข้อสอบ');
+  return;
+}
+clearInterval(timerId);beep('finish');
+document.getElementById('quiz').classList.add('hidden');document.getElementById('result').classList.remove('hidden');
+const score=calcScore(), percent=Math.round(score/questions.length*100), used=Math.min(30*60,Math.floor((Date.now()-startedAt)/1000));
+document.getElementById('resultName').textContent='ชื่อนักเรียน: '+student+(endedByTime?' • หมดเวลา':'');
+document.getElementById('timeUsed').textContent='เวลาที่ใช้: '+fmt(used)+' / 30:00';
+document.getElementById('finalScore').textContent=score+' / '+questions.length;
+document.getElementById('passText').innerHTML=score>=24?'🏆 ผ่านเกณฑ์ 80% — สุดยอดมาก!':'🔥 ยังไม่ผ่าน 80% — ต้องได้อย่างน้อย 24 ข้อ';
+const review=document.getElementById('review');review.innerHTML='';
+questions.forEach((q,i)=>{const user=answers[i],ok=user===q.ans,div=document.createElement('div');div.className='reviewItem';div.innerHTML=`<div><b>ข้อ ${i+1}.</b> ${q.q}</div><div class="${ok?'correct':'wrong'}">${ok?'✔ ตอบถูก':'✘ ตอบผิด/ยังไม่ได้ตอบ'}</div><div>คำตอบของนักเรียน: ${user===null?'-':(user+1)+') '+q.opts[user]}</div><div class="correct">เฉลย: ${q.ans+1}) ${q.opts[q.ans]}</div><div class="exp">อธิบาย: ${q.exp}</div>`;review.appendChild(div);});
+}
+function restart(){clearInterval(timerId);beep('click');current=0;answers=Array(questions.length).fill(null);document.getElementById('result').classList.add('hidden');document.getElementById('start').classList.remove('hidden');}
+</script>
+</body>
+</html>
